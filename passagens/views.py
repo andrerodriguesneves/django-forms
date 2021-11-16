@@ -7,7 +7,7 @@ def index(request):
     form = PassagenForms()
     contexto = {
         'form': form,
-        'titulo': 'Passagem'
+        'titulo': 'Seu melhor buscador de passagens aereas! '
     }
     return render(request, 'index.html', contexto)
 
