@@ -15,10 +15,17 @@ def index(request):
 def checkout(request):
     if request.method == 'POST':
         form = PassagenForms(request.POST)
-        contexto = {
-            'form': form,
-            'titulo': 'CheckOut - Busca Passagens'
-        }
+        if form.is_valid():
+            contexto = {
+                'form': form,
+                'titulo': 'CheckOut - Busca Passagens'
+            }
+            return render(request, 'checkout.html', contexto)
+        else:
+            contexto = {
+                'form': form,
+                'titulo': 'Seu melhor buscador de passagens aereas!'
+            }
+            return render(request, 'index.html', contexto)
 
-        return render(request, 'checkout.html', contexto)
 
