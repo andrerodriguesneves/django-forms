@@ -1,12 +1,14 @@
 {% extends 'base.html' %}
 {% block title %} {{titulo}} {% endblock %}
 {% block content %}
-
+<br><br>
 <h1>## Checkout ##</h1>
 <br><br>
 
 {% for campos in form %}
     <p>{{ campos.label }} : {{ campos.value }} </p>
 {% endfor %}
+
+<p>{{ pessoa_form.email.label }} : {{ pessoa_form.email.value }} </p>
 
 {% endblock %}
